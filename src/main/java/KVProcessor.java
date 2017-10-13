@@ -22,11 +22,16 @@ public class KVProcessor implements Processor {
 
     public Map<String, String> get(String key) {
         Map<String, String> table = (Map)this.store.get(key);
+        LOG.info("try to find " + key );
+        if (table == null){
+            LOG.info("can't find " + key + "in " + this.store.size() + " items");
+        }else{
+        }
         return table;
     }
 
     public boolean put(String key, Map<String, String> value) {
-        LOG.info("Current kvpodid is " + KvStoreConfig.getServersNum());
+        LOG.info("Put: current kvpod count is " + KvStoreConfig.getServersNum());
         this.store.put(key, value);
         return true;
     }
