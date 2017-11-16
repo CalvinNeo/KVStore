@@ -1,1 +1,1 @@
-processorClass=cn.helium.kvstore.processor.KVProcessor
+processorClass=MyProcessor
